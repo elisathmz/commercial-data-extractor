@@ -1,9 +1,10 @@
 # Commercial Data Extractor (ETL)
 
-A straightforward Python script for Web Scraping and ETL (Extract, Transform, Load). It automates the extraction of commercial data, sanitizes the raw text, and stores it securely in a relational database.
+A Python ETL pipeline that scrapes product listings from e-commerce pages, cleans and normalizes fields such as product titles and prices, and stores the structured data in a local SQLite database.
 
 ## Overview
-Manual data collection is slow and prone to errors. This project tackles that issue by automating the collection of product data (titles and prices) from e-commerce environments. It cleans the raw strings (handling currency symbols and formatting) and loads the structured data into a local SQLite database, making it ready for querying and analysis.
+
+This project automates the collection of product listing data from e-commerce pages. It extracts fields such as product titles and prices, cleans and normalizes the raw text, and loads the structured results into a local SQLite database for querying and further analysis.
 
 ## Tech Stack
 - Python 3
@@ -12,4 +13,4 @@ Manual data collection is slow and prone to errors. This project tackles that is
 - SQLite & SQLAlchemy (Database operations)
 
 ## How it Works
-The script connects to the target web catalog and parses the DOM to extract specific elements. It then utilizes Pandas to clean the raw data and structure it into a tabular format. Finally, SQLAlchemy establishes a local connection to push the clean DataFrame into an SQL table.
+The script connects to the target e-commerce page and parses the DOM to extract product titles and prices. Pandas is then used to clean and normalize the raw data, and SQLAlchemy loads the resulting DataFrame into a local SQLite table.
